@@ -80,6 +80,10 @@
     border: none;
     width: 100%;
     padding: 0.5em 0px;
+
+    &:active{
+        background: #6e6e6e93
+    }
 }
 
 .add-to-cart button * {

@@ -28,9 +28,8 @@
 
 
 {{#if headerLayoutController}}
-{{#if headerLayoutController.toggleCart}}
+{{#if headerLayoutController.cartState}}
 
-{{!-- {{#if true}} --}}
 <div class="sideModal">
     <div class="sideModal-item">
         {{> ../cart/cart header=headerLayoutController}}

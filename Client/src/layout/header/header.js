@@ -10,7 +10,7 @@ function HeaderLayoutController() {
   this.cartItemMap = {};
   this.cartFinalPrice = 0;
 
-  this.cartState = true;
+  this.cartState = false;
   this.toggleCart();
   this.manipulate();
   this.obj = {};
@@ -40,14 +40,14 @@ HeaderLayoutController.prototype.toggleCart = function () {
      // console.log("add to cart")
       let actionData = e.target.dataset.action;
      // console.log(actionData)
-      this.toggleCart = !this.toggleCart;
-      headerEvent.emit('cartToggle', this.toggleCart);
+      this.cartState = !this.cartState;
+      headerEvent.emit('cartToggle', this.cartState);
     } 
     console.log(e.target.className)
     if(e.target.className=='sideModal-item' && e.target.className!='cart-wrapper'){
       //console.log("Backface")
-      this.toggleCart = !this.toggleCart;
-      headerEvent.emit('cartToggle', this.toggleCart);
+      this.cartState = !this.cartState;
+      headerEvent.emit('cartToggle', this.cartState);
     }
   })
 

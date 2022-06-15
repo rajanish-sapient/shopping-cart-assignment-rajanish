@@ -8,7 +8,7 @@ import { Router } from './modules/Router';
 import * as Login from './controllers/login/login.hbs';
 import * as Register from './controllers/register/register.hbs';
 import './Home/Home.scss';
-import { HomeController } from './Home/Home';
+import { HomeController, afterViewInit } from './Home/Home';
 import { Cart } from './controllers/cart/cart';
 
 
@@ -76,6 +76,10 @@ function render(route = "home") {
   }
   console.log(cuurentRouteData);
   rootElement.innerHTML = searchRoute.template({ cuurentRouteData, headerLayoutController })
+
+  if (route == "home") {
+    setTimeout(() => { afterViewInit() }, 0);
+  }
 }
 
 
@@ -88,46 +92,7 @@ function getCurrentRouteForNavigation(data = "") {
   }
   window.history.pushState("nextState", "nextTitle", '/' + linkPath + queryParam);
   render(linkPath)
-  showSlides(1);
-
 }
 
 
 
-
-
-
-
-
-
-
-
-let slideIndex = 1;
-// showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-
-  console.log(slides);
-  
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}

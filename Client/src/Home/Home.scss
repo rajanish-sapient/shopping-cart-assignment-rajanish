@@ -1,11 +1,17 @@
 @import '../common/common';
 
+.home-wrapper{
+    height: calc(100vh - 6em);
+    overflow: auto;
+    margin-top: 1em
+}
 
 .home-content {
     @include autoMargin;
     margin-top: 1em;
     display: flex;
     flex-direction: column;
+
 
     .categories {
         display: flex;
@@ -169,13 +175,15 @@
 /* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 5px;
+    width: 5px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+    position: relative;
+    top: -3em;
 }
 
 .active,
