@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "publish": "webpack-dev-server --output-public-path=./index.html"
+    "start": "webpack serve"
   },
   "author": "",
   "license": "ISC",
