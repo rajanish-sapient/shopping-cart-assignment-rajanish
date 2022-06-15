@@ -84,3 +84,11 @@
     height: auto;
 
 }
+
+
+@media screen and (max-width: 640px) {
+    .left-menu {
+        display: none;
+    }
+}
+

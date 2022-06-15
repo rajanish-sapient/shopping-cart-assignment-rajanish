@@ -42,15 +42,18 @@
         padding: 0.5em 0;
         cursor: pointer;
         text-align: center;
-        -webkit-transition-duration: 0.4s; /* Safari */
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
         transition-duration: 0.4s;
         text-decoration: none;
         overflow: hidden;
         cursor: pointer;
         position: relative;
 
+        >.sm {
+            display: none;
+        }
 
-       
     }
 
 
@@ -66,21 +69,32 @@
         opacity: 0;
         transition: all 0.8s
     }
+
     button:active:after {
         padding: 0;
         margin: 0;
         opacity: 1;
         transition: 0s
-      }
-      button:hover{
-          color: #e9c3c3;
-      }
+    }
+
+    button:hover {
+        color: #e9c3c3;
+    }
 
     @media screen and (min-width: 768px) {
         grid-template:
             "title title"
             "image content"
             "buyNow buyNow";
+
+        button {
+            display: flex;
+            justify-content: center;
+            >.sm {
+                display: block;
+            }
+        }
+
     }
 
     @media screen and (min-width: 1024px) {
@@ -91,6 +105,11 @@
 
         >span {
             display: block;
+        }
+        button {
+            >.sm {
+                display: none;
+            }
         }
     }
 
